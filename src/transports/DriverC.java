@@ -6,3 +6,4 @@ public class DriverC extends Driver<Truck> {
         super(fullName, driverLicense, experience, licenseCar);
     }
 }
+

@@ -8,12 +8,12 @@ public class Car extends Transport implements Competing {
 
     @Override
     public void startMoving() {
-        System.out.println("начать движение");
+        System.out.println("Автомобиль начал движение");
     }
 
     @Override
     public void finishTheMovement() {
-        System.out.println("закончить движение");
+        System.out.println("Автомобиль закончил движение");
     }
 
     @Override

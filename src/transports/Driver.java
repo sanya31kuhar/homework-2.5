@@ -14,26 +14,14 @@ public abstract class Driver<T extends Transport & Competing> {
             this.fullName = fullName;
         }
         if (driverLicense != 'B' && driverLicense != 'C' && driverLicense != 'D') {
-            throw new NullPointerException("Нет прав, иди в автошколу");
+            throw new IllegalArgumentException("Нет прав, иди в автошколу");
         } else {
             this.driverLicense = driverLicense;
         }
         if (licenseCar != null) {
             this.licenseCar = licenseCar;
         }
-        setExperience( experience);
-    }
-
-    public void startMoving() {
-        System.out.println(fullName + "Начинает движение" + licenseCar.getBrand() + " " + licenseCar.getModel());
-    }
-
-    public void stopsMoving() {
-        System.out.println(fullName + "Останавливается" + licenseCar.getBrand() + " " + licenseCar.getModel());
-    }
-
-    public void refills() {
-        System.out.println(fullName + "Заправляется" + licenseCar.getBrand() + " " + licenseCar.getModel());
+        this.experience = experience;
     }
 
     public String getFullName() {
@@ -56,16 +44,28 @@ public abstract class Driver<T extends Transport & Competing> {
         }
     }
 
-        public void driverInfo () {
-            System.out.println("Водитель " + fullName + " управляет " + licenseCar.getBrand() + " " +
-                    licenseCar.getModel() + " и будет участвовать в заезде");
-        }
-
-        @Override
-        public String toString () {
-            return "Имя водителя: " + fullName + ". Категория прав " + driverLicense + ". Опыт вождения:" + experience;
-        }
+    public void startMoving(T licenseCar) {
+        System.out.println(getFullName() + " начинает движение");
     }
+
+    public void stopsMoving(T licenseCar) {
+        System.out.println(getFullName() + " заканчивает движение");
+    }
+
+    public void refills(T licenseCar) {
+        System.out.println(getFullName() + "Заправляется");
+    }
+
+    public void driverInfo() {
+        System.out.println("Водитель " + fullName + " управляет " + licenseCar.getBrand() + " " +
+                licenseCar.getModel() + " и будет участвовать в заезде");
+    }
+
+    @Override
+    public String toString() {
+        return "Имя водителя: " + fullName + ". Категория прав " + driverLicense + ". Опыт вождения:" + experience;
+    }
+}
 
 
 

@@ -1,6 +1,7 @@
 package transports;
 
 public abstract class Transport {
+
     private final String brand;
     private final String model;
     private final double engineVolume;
@@ -37,13 +38,9 @@ public abstract class Transport {
         return engineVolume;
     }
 
-    public void startMoving() {
-        System.out.println("Метод начать движение");
-    }
+    public abstract void startMoving();
 
-    public void finishTheMovement() {
-        System.out.println(" Метод закончить движение");
-    }
+    public abstract void finishTheMovement();
 
     @Override
     public String toString() {
