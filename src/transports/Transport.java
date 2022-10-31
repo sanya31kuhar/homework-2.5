@@ -40,7 +40,8 @@ public abstract class Transport {
 
     public abstract void startMoving();
 
-    public abstract void finishTheMovement();
+    public abstract void stopsMoving();
+
 
     @Override
     public String toString() {

@@ -44,15 +44,15 @@ public abstract class Driver<T extends Transport & Competing> {
         }
     }
 
-    public void startMoving(T licenseCar) {
-        System.out.println(getFullName() + " начинает движение");
+    public void startMoving() {
+        licenseCar.startMoving();
     }
 
-    public void stopsMoving(T licenseCar) {
-        System.out.println(getFullName() + " заканчивает движение");
+    public void stopsMoving() {
+        licenseCar.stopsMoving();
     }
 
-    public void refills(T licenseCar) {
+    public void refills() {
         System.out.println(getFullName() + "Заправляется");
     }
 

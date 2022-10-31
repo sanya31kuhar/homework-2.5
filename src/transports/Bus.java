@@ -12,7 +12,7 @@ public class Bus extends Transport implements Competing {
     }
 
     @Override
-    public void finishTheMovement() {
+    public void stopsMoving() {
         System.out.println("Автобус закончил движение");
     }
 
